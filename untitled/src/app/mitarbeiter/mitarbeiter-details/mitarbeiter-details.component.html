@@ -1,0 +1,56 @@
+
+<div *ngIf="!selectedEmployee">
+  <div class="row">
+    <div class="col-xs-12 form-group">
+      Wählen Sie einen Mitarbeiter aus
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedEmployee">
+ <div class="row">
+  <div class="col-xs-6">
+    <!--h1>Max Mustermann</h1-->
+    <h1>{{selectedEmployee?.firstname}} {{selectedEmployee?.lastname}}</h1>
+  </div>
+  <div class="col-xs-6">
+    <img src="" class="img-responsive"/>
+    <img [src]="selectedEmployee?.photo" class="img-responsive"/>
+  </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 form-group">
+    <button class="btn btn-primary">Bearbeiten</button>
+    <button class="btn btn-danger">Löschen</button>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-xs-12 form-group">
+    <label for="department">Abteilung</label>
+    <!--div id="department">IT</div>
+    <div id="department">{{selectedEmployee?.department?.name}}</div-->
+    <div id="department">
+      {{selectedEmployee?.department?.name}}
+      <span class="badge" *appHead="selectedEmployee">Abteilungsleiter</span>
+    </div>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-xs-12 form-group">
+    <label for="phone">Telefonnummer</label>
+    <!--div id="phone">0049 151 0000</div-->
+    <div id="phone">{{selectedEmployee?.phone}}</div>
+  </div>
+</div>
+
+<div class="row top-buffer">
+  <div class="col-xs-12 form-group">
+    <label for="email">E-Mail</label>
+    <!--div id="email">max.mustermann@virtual7.de</div-->
+    <div id="email">{{selectedEmployee?.email}}</div>
+  </div>
+</div>

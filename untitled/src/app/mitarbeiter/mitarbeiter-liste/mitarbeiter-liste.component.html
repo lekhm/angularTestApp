@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12 form-group">
+    <button class="btn btn-success">Neuer Mitarbeiter</button>
+  </div>
+</div>
+
+  <app-mitarbeiter-suche></app-mitarbeiter-suche>
+
+<div class="row top-buffer">
+  <div class="col-xs-12 ">
+    <div class="list-group">
+      <!--button class="list-group-item clearfix" (click)="onSelect(employee)"-->
+      <!--button class="list-group-item clearfix" *ngFor="let employee of employees" (click)="onSelect(employee)"-->
+      <button class="list-group-item clearfix"
+              *ngFor="let employee of employees"
+
+        (click)="onSelect(employee)"
+        [ngClass]="{'active' : (selectedEmployee == employee)}">
+        <app-mitarbeiter-item [employee]="employee"></app-mitarbeiter-item>
+      </button>
+    </div>
+  </div>
+</div>
